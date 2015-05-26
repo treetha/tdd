@@ -28,7 +28,6 @@ public class FlowConvertTemperatureFahrenheitToCelsiuseTest {
     public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
     private String fahrenheit;
     private String celsius;
-
     @Parameters
     public static Iterable<Object[]> data(){
         return Arrays.asList(new Object[][]{
@@ -39,7 +38,6 @@ public class FlowConvertTemperatureFahrenheitToCelsiuseTest {
         this.celsius = celsius;
         this.fahrenheit = fahrenheit;
     }
-
     @Test
     public void convert(){
         onView(withId(R.id.f_text)).perform(typeText(this.fahrenheit));
