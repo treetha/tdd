@@ -24,20 +24,24 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
  */
 @RunWith(Parameterized.class)
 public class FlowConvertTemperatureFahrenheitToCelsiuseTest {
+
     @Rule
     public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
     private String fahrenheit;
     private String celsius;
+
     @Parameters
     public static Iterable<Object[]> data(){
         return Arrays.asList(new Object[][]{
                 {"32","0.0"},{"64","17.77777777777778"}
         });
     }
+
     public FlowConvertTemperatureFahrenheitToCelsiuseTest(String fahrenheit,String celsius){
         this.celsius = celsius;
         this.fahrenheit = fahrenheit;
     }
+
     @Test
     public void convert(){
         onView(withId(R.id.f_text)).perform(typeText(this.fahrenheit));
